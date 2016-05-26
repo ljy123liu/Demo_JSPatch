@@ -18,6 +18,13 @@
 		2DAEAB3A1CF70BFD0063612F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */; };
 		2DAEAB3C1CF70C0F0063612F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB3B1CF70C0F0063612F /* libz.tbd */; };
 		2DAEAB3E1CF70C2E0063612F /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEAB3D1CF70C2E0063612F /* main.js */; };
+		2DAEAB421CF70FFE0063612F /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB411CF70FFE0063612F /* OneViewController.m */; };
+		2DAEAB451CF711E20063612F /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB441CF711E20063612F /* TwoViewController.m */; };
+		2DAEAB481CF712130063612F /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB471CF712130063612F /* ThreeViewController.m */; };
+		2DAEAB4B1CF712200063612F /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB4A1CF712200063612F /* FourViewController.m */; };
+		2DAEAB4E1CF712300063612F /* FiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB4D1CF712300063612F /* FiveViewController.m */; };
+		2DAEAB511CF712DA0063612F /* SixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB501CF712DA0063612F /* SixViewController.m */; };
+		2DAEAB541CF71DA10063612F /* SevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB531CF71DA10063612F /* SevenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,20 @@
 		2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		2DAEAB3B1CF70C0F0063612F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2DAEAB3D1CF70C2E0063612F /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		2DAEAB401CF70FFE0063612F /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		2DAEAB411CF70FFE0063612F /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		2DAEAB431CF711E20063612F /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		2DAEAB441CF711E20063612F /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		2DAEAB461CF712130063612F /* ThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		2DAEAB471CF712130063612F /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
+		2DAEAB491CF712200063612F /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		2DAEAB4A1CF712200063612F /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		2DAEAB4C1CF712300063612F /* FiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveViewController.h; sourceTree = "<group>"; };
+		2DAEAB4D1CF712300063612F /* FiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveViewController.m; sourceTree = "<group>"; };
+		2DAEAB4F1CF712DA0063612F /* SixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixViewController.h; sourceTree = "<group>"; };
+		2DAEAB501CF712DA0063612F /* SixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixViewController.m; sourceTree = "<group>"; };
+		2DAEAB521CF71DA10063612F /* SevenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenViewController.h; sourceTree = "<group>"; };
+		2DAEAB531CF71DA10063612F /* SevenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +114,7 @@
 		2DAEAB101CF6FF1A0063612F /* Demo_JSPatch */ = {
 			isa = PBXGroup;
 			children = (
+				2DAEAB3D1CF70C2E0063612F /* main.js */,
 				2DAEAB141CF6FF1A0063612F /* AppDelegate.h */,
 				2DAEAB151CF6FF1A0063612F /* AppDelegate.m */,
 				2DAEAB3F1CF70C410063612F /* Controllers */,
@@ -108,7 +130,6 @@
 				2DAEAB1D1CF6FF1A0063612F /* Assets.xcassets */,
 				2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */,
 				2DAEAB221CF6FF1A0063612F /* Info.plist */,
-				2DAEAB3D1CF70C2E0063612F /* main.js */,
 				2DAEAB121CF6FF1A0063612F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +159,20 @@
 			children = (
 				2DAEAB171CF6FF1A0063612F /* ViewController.h */,
 				2DAEAB181CF6FF1A0063612F /* ViewController.m */,
+				2DAEAB401CF70FFE0063612F /* OneViewController.h */,
+				2DAEAB411CF70FFE0063612F /* OneViewController.m */,
+				2DAEAB431CF711E20063612F /* TwoViewController.h */,
+				2DAEAB441CF711E20063612F /* TwoViewController.m */,
+				2DAEAB461CF712130063612F /* ThreeViewController.h */,
+				2DAEAB471CF712130063612F /* ThreeViewController.m */,
+				2DAEAB491CF712200063612F /* FourViewController.h */,
+				2DAEAB4A1CF712200063612F /* FourViewController.m */,
+				2DAEAB4C1CF712300063612F /* FiveViewController.h */,
+				2DAEAB4D1CF712300063612F /* FiveViewController.m */,
+				2DAEAB4F1CF712DA0063612F /* SixViewController.h */,
+				2DAEAB501CF712DA0063612F /* SixViewController.m */,
+				2DAEAB521CF71DA10063612F /* SevenViewController.h */,
+				2DAEAB531CF71DA10063612F /* SevenViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -243,9 +278,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAEAB4E1CF712300063612F /* FiveViewController.m in Sources */,
+				2DAEAB511CF712DA0063612F /* SixViewController.m in Sources */,
+				2DAEAB4B1CF712200063612F /* FourViewController.m in Sources */,
 				2DAEAB191CF6FF1A0063612F /* ViewController.m in Sources */,
 				2DAEAB161CF6FF1A0063612F /* AppDelegate.m in Sources */,
 				2DAEAB131CF6FF1A0063612F /* main.m in Sources */,
+				2DAEAB541CF71DA10063612F /* SevenViewController.m in Sources */,
+				2DAEAB481CF712130063612F /* ThreeViewController.m in Sources */,
+				2DAEAB451CF711E20063612F /* TwoViewController.m in Sources */,
+				2DAEAB421CF70FFE0063612F /* OneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

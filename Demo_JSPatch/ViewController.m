@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *vcArray;
 @end
 
 @implementation ViewController
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,34 +29,73 @@
 
 #pragma mark - UITableView Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    static NSString *iden = @"iden";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
+    }
+    cell.textLabel.text = self.dataArray[indexPath.row];
+    return cell;
 }
 
 #pragma mark - UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSString *className = self.vcArray[indexPath.row];
+    Class class = NSClassFromString(className);
+    if (class) {
+        UIViewController *ctrl = class.new;
+        ctrl.title = self.dataArray[indexPath.row];
+        [self.navigationController pushViewController:ctrl animated:YES];
+    }
+    //取消返回时候的选中高亮状态
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Setter And Getter
--(UITableView *)tableView {
+- (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        [self.view addSubview:_tableView];
+        
     }
     return _tableView;
 }
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@""];
+        _dataArray = @[@"1.多方法调用，用” , ”隔开",
+                       @"2.UI相关",
+                       @"3.多参数用 ' _ '连接",
+                       @"4.双下划线替换OC中的单下划线(分号中不能再有分号)",
+                       @"5.覆盖之前的方法",
+                       @"6.覆盖类方法",
+                       @"7.用getter/setter的方式获取/修改已在OC定义的 Property:",
+                       @"8.动态新增 Property",
+                       @"9.私有成员变量",
+                       @"10.覆盖类方法,实例方法在第二个参数，类方法放在第三个参数",
+                       @"",
+                       @"",
+                       @"",
+                       @"",
+                       @"",
+                       @"",
+                       @"",
+                       @""];
     }
     return _dataArray;
+}
+
+- (NSArray *)vcArray {
+    if (!_vcArray) {
+        _vcArray = @[@"OneViewController",@"TwoViewController",@"ThreeViewController",@"FourViewController",@"FiveViewController",@"SixViewController",@"SevenViewController",@"EightViewController"];
+    }
+    return _vcArray;
 }
 
 @end
