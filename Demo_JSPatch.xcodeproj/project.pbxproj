@@ -14,6 +14,10 @@
 		2DAEAB1E1CF6FF1A0063612F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEAB1D1CF6FF1A0063612F /* Assets.xcassets */; };
 		2DAEAB211CF6FF1A0063612F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */; };
 		2DAEAB2C1CF6FF1A0063612F /* Demo_JSPatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB2B1CF6FF1A0063612F /* Demo_JSPatchTests.m */; };
+		2DAEAB381CF70BEE0063612F /* JSPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB371CF70BEE0063612F /* JSPatch.framework */; };
+		2DAEAB3A1CF70BFD0063612F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */; };
+		2DAEAB3C1CF70C0F0063612F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB3B1CF70C0F0063612F /* libz.tbd */; };
+		2DAEAB3E1CF70C2E0063612F /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEAB3D1CF70C2E0063612F /* main.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		2DAEAB271CF6FF1A0063612F /* Demo_JSPatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_JSPatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAEAB2B1CF6FF1A0063612F /* Demo_JSPatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo_JSPatchTests.m; sourceTree = "<group>"; };
 		2DAEAB2D1CF6FF1A0063612F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DAEAB371CF70BEE0063612F /* JSPatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSPatch.framework; path = Demo_JSPatch/JSPatch.framework; sourceTree = "<group>"; };
+		2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2DAEAB3B1CF70C0F0063612F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2DAEAB3D1CF70C2E0063612F /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAEAB3C1CF70C0F0063612F /* libz.tbd in Frameworks */,
+				2DAEAB3A1CF70BFD0063612F /* JavaScriptCore.framework in Frameworks */,
+				2DAEAB381CF70BEE0063612F /* JSPatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +74,7 @@
 		2DAEAB051CF6FF1A0063612F = {
 			isa = PBXGroup;
 			children = (
+				2DAEAB361CF70BE20063612F /* Framework */,
 				2DAEAB101CF6FF1A0063612F /* Demo_JSPatch */,
 				2DAEAB2A1CF6FF1A0063612F /* Demo_JSPatchTests */,
 				2DAEAB0F1CF6FF1A0063612F /* Products */,
@@ -83,12 +95,7 @@
 			children = (
 				2DAEAB141CF6FF1A0063612F /* AppDelegate.h */,
 				2DAEAB151CF6FF1A0063612F /* AppDelegate.m */,
-				2DAEAB171CF6FF1A0063612F /* ViewController.h */,
-				2DAEAB181CF6FF1A0063612F /* ViewController.m */,
-				2DAEAB1A1CF6FF1A0063612F /* Main.storyboard */,
-				2DAEAB1D1CF6FF1A0063612F /* Assets.xcassets */,
-				2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */,
-				2DAEAB221CF6FF1A0063612F /* Info.plist */,
+				2DAEAB3F1CF70C410063612F /* Controllers */,
 				2DAEAB111CF6FF1A0063612F /* Supporting Files */,
 			);
 			path = Demo_JSPatch;
@@ -97,6 +104,11 @@
 		2DAEAB111CF6FF1A0063612F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DAEAB1A1CF6FF1A0063612F /* Main.storyboard */,
+				2DAEAB1D1CF6FF1A0063612F /* Assets.xcassets */,
+				2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */,
+				2DAEAB221CF6FF1A0063612F /* Info.plist */,
+				2DAEAB3D1CF70C2E0063612F /* main.js */,
 				2DAEAB121CF6FF1A0063612F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -109,6 +121,25 @@
 				2DAEAB2D1CF6FF1A0063612F /* Info.plist */,
 			);
 			path = Demo_JSPatchTests;
+			sourceTree = "<group>";
+		};
+		2DAEAB361CF70BE20063612F /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				2DAEAB3B1CF70C0F0063612F /* libz.tbd */,
+				2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */,
+				2DAEAB371CF70BEE0063612F /* JSPatch.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		2DAEAB3F1CF70C410063612F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DAEAB171CF6FF1A0063612F /* ViewController.h */,
+				2DAEAB181CF6FF1A0063612F /* ViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +225,7 @@
 				2DAEAB211CF6FF1A0063612F /* LaunchScreen.storyboard in Resources */,
 				2DAEAB1E1CF6FF1A0063612F /* Assets.xcassets in Resources */,
 				2DAEAB1C1CF6FF1A0063612F /* Main.storyboard in Resources */,
+				2DAEAB3E1CF70C2E0063612F /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +371,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Demo_JSPatch",
+				);
 				INFOPLIST_FILE = Demo_JSPatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WanJianTechnology.Demo-JSPatch";
@@ -350,6 +386,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Demo_JSPatch",
+				);
 				INFOPLIST_FILE = Demo_JSPatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WanJianTechnology.Demo-JSPatch";
