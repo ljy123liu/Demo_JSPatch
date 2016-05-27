@@ -78,8 +78,8 @@
                        @"7.用getter/setter的方式获取/修改已在OC定义的 Property:",
                        @"8.动态新增 Property",
                        @"9.私有成员变量",
-                       @"10.覆盖类方法,实例方法在第二个参数，类方法放在第三个参数",
-                       @"",
+                       @"10.可以给一个类随意添加OC未定义的方法",
+                       @"11.让一个类实现某些 Protocol 接口",
                        @"",
                        @"",
                        @"",
@@ -93,7 +93,7 @@
 
 - (NSArray *)vcArray {
     if (!_vcArray) {
-        _vcArray = @[@"OneViewController",@"TwoViewController",@"ThreeViewController",@"FourViewController",@"FiveViewController",@"SixViewController",@"SevenViewController",@"EightViewController"];
+        _vcArray = @[@"OneViewController",@"TwoViewController",@"ThreeViewController",@"FourViewController",@"FiveViewController",@"SixViewController",@"SevenViewController",@"EightViewController",@"NightViewController",@"TenViewController",@"ElevenViewController",@"TwelveViewController",@"ThirteenViewController",@"FourteenViewController"];
     }
     return _vcArray;
 }

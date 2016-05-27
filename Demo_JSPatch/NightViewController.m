@@ -1,27 +1,27 @@
 //
-//  SevenViewController.m
+//  NightViewController.m
 //  Demo_JSPatch
 //
-//  Created by LIUYONG on 16/5/26.
+//  Created by LIUYONG on 16/5/27.
 //  Copyright © 2016年 WanJianTechnology. All rights reserved.
 //
 
-#import "SevenViewController.h"
+#import "NightViewController.h"
 
-@interface SevenViewController ()
-@property (nonatomic, strong) NSArray *data;
-@end
+@implementation NightViewController
+{
+    NSArray *_data;
+}
 
-@implementation SevenViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.data = @[@"1"];
-    
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSLog(@"%@",self.data);
+    NSLog(@"data:%@",_data);
 }
+
 @end
