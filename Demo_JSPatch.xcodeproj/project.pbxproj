@@ -32,6 +32,7 @@
 		2DAEAB631CF7E7930063612F /* TwelveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB621CF7E7930063612F /* TwelveViewController.m */; };
 		2DAEAB661CF7E7BE0063612F /* ThirteenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB651CF7E7BE0063612F /* ThirteenViewController.m */; };
 		2DAEAB691CF7E7D60063612F /* FourteenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB681CF7E7D60063612F /* FourteenViewController.m */; };
+		2DF21C9B1CF85F7D0086B676 /* JSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF21C9A1CF85F7D0086B676 /* JSObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		2DAEAB651CF7E7BE0063612F /* ThirteenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirteenViewController.m; sourceTree = "<group>"; };
 		2DAEAB671CF7E7D60063612F /* FourteenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourteenViewController.h; sourceTree = "<group>"; };
 		2DAEAB681CF7E7D60063612F /* FourteenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourteenViewController.m; sourceTree = "<group>"; };
+		2DF21C991CF85F7D0086B676 /* JSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSObject.h; sourceTree = "<group>"; };
+		2DF21C9A1CF85F7D0086B676 /* JSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 				2DAEAB621CF7E7930063612F /* TwelveViewController.m */,
 				2DAEAB641CF7E7BE0063612F /* ThirteenViewController.h */,
 				2DAEAB651CF7E7BE0063612F /* ThirteenViewController.m */,
+				2DF21C991CF85F7D0086B676 /* JSObject.h */,
+				2DF21C9A1CF85F7D0086B676 /* JSObject.m */,
 				2DAEAB671CF7E7D60063612F /* FourteenViewController.h */,
 				2DAEAB681CF7E7D60063612F /* FourteenViewController.m */,
 			);
@@ -316,6 +321,7 @@
 				2DAEAB631CF7E7930063612F /* TwelveViewController.m in Sources */,
 				2DAEAB4E1CF712300063612F /* FiveViewController.m in Sources */,
 				2DAEAB511CF712DA0063612F /* SixViewController.m in Sources */,
+				2DF21C9B1CF85F7D0086B676 /* JSObject.m in Sources */,
 				2DAEAB691CF7E7D60063612F /* FourteenViewController.m in Sources */,
 				2DAEAB4B1CF712200063612F /* FourViewController.m in Sources */,
 				2DAEAB601CF7E7730063612F /* ElevenViewController.m in Sources */,
@@ -524,6 +530,7 @@
 				2DAEAB321CF6FF1A0063612F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DAEAB331CF6FF1A0063612F /* Build configuration list for PBXNativeTarget "Demo_JSPatchTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +539,7 @@
 				2DAEAB351CF6FF1A0063612F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

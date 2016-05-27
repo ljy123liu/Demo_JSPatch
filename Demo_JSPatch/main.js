@@ -1,4 +1,4 @@
-require('UIView, UIColor, UILabel, UIImageView')
+require('UIView, UIColor, UILabel, UIImageView','NSObject')
 
 //1.多方法调用，用” , ”隔开(覆盖分类的方法和普通方法一样)
 defineClass('OneViewController', {
@@ -55,6 +55,7 @@ defineClass('FiveViewController',{
     },
             
     viewWillDisappear: function(animated) {
+        self.superview().viewWillDisappear(animated);
         self.ORIGbeforeMethod();
     }
 })
@@ -133,6 +134,89 @@ defineClass("ElevenViewController: UIViewController <UIAlertViewDelegate>", {
     console.log('clicked index ' + buttonIndex)
     }
 })
+
+//12.特殊类型
+
+//Struct JSPatch原生支持 CGRect / CGPoint / CGSize / NSRange 这四个 struct 类型，用 JS 对象表示:,其它类型需要自己定义
+defineClass('TwelveViewController', {
+            
+    viewWillAppear: function(animated) {
+    //调用父类方法super
+    self.super().viewWillAppear(animated);
+    var label = UILabel.alloc().initWithFrame({x:20, y:100, width:100, height:100});
+    label.setCenter({x: 250, y: 150});
+    label.sizeThatFits({width: 100, height:100});
+    label.setText('JS_Label');
+    label.setBackgroundColor(UIColor.greenColor());
+    self.view().addSubview(label);
+            
+    var x = view.frame().x
+    var range = {location: 0, length: 1}
+    },
+        
+});
+
+//Selector
+defineClass('TwelveViewController', {
+            
+    viewDidAppear: function(animated) {
+        //调用父类方法super
+        self.super().viewDidAppear(animated);
+        //容易忘记方法名后面的冒号" : "
+        self.performSelector_withObject_afterDelay("ocSelector:", "JS_Selector", 2.0)
+    }
+});
+
+//nil(待处理)
+defineClass('TwelveViewController', {
+    testMethod: function() {
+        console.log('test');
+    },
+            
+//    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@""]];
+    JSTestNull: function(nsnull) {
+        console.log('1111111');
+        var url = "123";
+        var rawData = NSData.dataWithContentsOfURL(NSURL.URLWithString(url));
+        console.log('3333333');
+//        if (rawData != null) {} //这样判断是错误的
+//        应该如下判断：
+        if (!rawData) {
+            console.log('1234');
+        }
+    }
+});
+
+//13.NSArray / NSString / NSDictionary 不会自动转成对应的JS类型，像普通 NSObject 一样使用它们:
+require('JSObject')
+defineClass('ThirteenViewController', {
+    viewDidLoad: function() {
+        self.super().viewDidLoad;
+        self.view().setBackgroundColor(UIColor.greenColor());
+            
+        //不会自动转成对应的JS类型，像普通 NSObject 一样使用它们:
+        var ocStr = JSObject.data().objectAtIndex(0)
+        ocStr.appendString("Patch")
+        
+        var dict = JSObject.dict()
+        dict.setObject_forKey(ocStr, 'name')
+        console.log(dict.objectForKey('name'))
+            
+        //如果要把 NSArray / NSString / NSDictionary 转为对应的 JS 类型，使用 .toJS() 接口:
+        var data = require('JSObject').data().toJS()
+        //data instanceof Array === true
+        data.push("andOC")
+        
+        var dict = JSObject.dict()
+        dict.setObject_forKey(data.join(''), 'name')
+        dict = dict.toJS()
+        console.log(dict['name'])
+    }
+});
+
+
+
+
 
 
 

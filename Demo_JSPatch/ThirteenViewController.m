@@ -9,5 +9,10 @@
 #import "ThirteenViewController.h"
 
 @implementation ThirteenViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+}
+
 
 @end
