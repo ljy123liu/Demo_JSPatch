@@ -25,6 +25,7 @@
 		2DAEAB4E1CF712300063612F /* FiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB4D1CF712300063612F /* FiveViewController.m */; };
 		2DAEAB511CF712DA0063612F /* SixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB501CF712DA0063612F /* SixViewController.m */; };
 		2DAEAB541CF71DA10063612F /* SevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB531CF71DA10063612F /* SevenViewController.m */; };
+		2DAEAB571CF7210E0063612F /* EightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB561CF7210E0063612F /* EightViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		2DAEAB501CF712DA0063612F /* SixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixViewController.m; sourceTree = "<group>"; };
 		2DAEAB521CF71DA10063612F /* SevenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenViewController.h; sourceTree = "<group>"; };
 		2DAEAB531CF71DA10063612F /* SevenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenViewController.m; sourceTree = "<group>"; };
+		2DAEAB551CF7210E0063612F /* EightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EightViewController.h; sourceTree = "<group>"; };
+		2DAEAB561CF7210E0063612F /* EightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EightViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				2DAEAB501CF712DA0063612F /* SixViewController.m */,
 				2DAEAB521CF71DA10063612F /* SevenViewController.h */,
 				2DAEAB531CF71DA10063612F /* SevenViewController.m */,
+				2DAEAB551CF7210E0063612F /* EightViewController.h */,
+				2DAEAB561CF7210E0063612F /* EightViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				2DAEAB511CF712DA0063612F /* SixViewController.m in Sources */,
 				2DAEAB4B1CF712200063612F /* FourViewController.m in Sources */,
 				2DAEAB191CF6FF1A0063612F /* ViewController.m in Sources */,
+				2DAEAB571CF7210E0063612F /* EightViewController.m in Sources */,
 				2DAEAB161CF6FF1A0063612F /* AppDelegate.m in Sources */,
 				2DAEAB131CF6FF1A0063612F /* main.m in Sources */,
 				2DAEAB541CF71DA10063612F /* SevenViewController.m in Sources */,

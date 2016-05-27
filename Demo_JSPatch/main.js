@@ -82,18 +82,21 @@ defineClass('SevenViewController',{
 })
 
 //动态新增 Property
-//defineClass("HomeViewController", ['data', 'totalCount'], {
-//    init: function() {
-//        self = self.super().init()
-//        self.setData(["a", "b"])     //添加新的 Property (id data)
-//        self.setTotalCount(2)
-//        return self
-//    },
-//    viewDidLoad: function() {
-//        var data = self.data()     //获取 Property 值
-//        var totalCount = self.totalCount()
-//    },
-//})
+defineClass("EightViewController", ['data', 'totalCount'], {
+    init: function() {
+        self = self.super().init()
+        self.setData(["a", "b"])     //添加新的 Property (id data)
+        self.setTotalCount(2)
+        return self
+    },
+            
+    viewDidLoad: function() {
+        var data = self.data()     //获取 Property 值
+        console.log(data)
+        var totalCount = self.totalCount()
+        console.log(totalCount)
+    },
+})
 
 //私有成员变量
 //defineClass("HomeViewController" , {
