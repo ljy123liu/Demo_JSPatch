@@ -1,3 +1,4 @@
+//可以在文件开头，统一引用对应的类。也可以在方法调用中再引用类
 require('UIView, UIColor, UILabel, UIImageView,NSObject,UIButton')
 
 //1.多方法调用，用” , ”隔开(覆盖分类的方法和普通方法一样)
@@ -113,7 +114,7 @@ defineClass('NightViewController' , {
     },
 })
 
-//10.可以给一个类随意添加 OC 未定义的方法，但所有的参数类型都是 id:
+//10.可以给一个类随意添加 OC 已定义的方法,未实现的方法,但所有的参数类型都是 id:
 var data = ["JS", "Patch"]
 defineClass('TenViewController', {
             
@@ -139,7 +140,6 @@ defineClass("ElevenViewController: UIViewController <UIAlertViewDelegate>", {
 })
 
 //12.特殊类型
-
 //Struct JSPatch原生支持 CGRect / CGPoint / CGSize / NSRange 这四个 struct 类型，用 JS 对象表示:,其它类型需要自己定义
 defineClass('TwelveViewController', {
             
@@ -171,6 +171,7 @@ defineClass('TwelveViewController', {
 });
 
 //nil(待处理)
+require('NSData')
 defineClass('TwelveViewController', {
             
     testMethod: function() {

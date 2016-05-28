@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1A16F91CF9E0ED00DA1B37 /* JSPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1A16F81CF9E0ED00DA1B37 /* JSPatch.framework */; };
 		2DAEAB131CF6FF1A0063612F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB121CF6FF1A0063612F /* main.m */; };
 		2DAEAB161CF6FF1A0063612F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB151CF6FF1A0063612F /* AppDelegate.m */; };
 		2DAEAB191CF6FF1A0063612F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB181CF6FF1A0063612F /* ViewController.m */; };
@@ -14,7 +15,6 @@
 		2DAEAB1E1CF6FF1A0063612F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEAB1D1CF6FF1A0063612F /* Assets.xcassets */; };
 		2DAEAB211CF6FF1A0063612F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */; };
 		2DAEAB2C1CF6FF1A0063612F /* Demo_JSPatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAB2B1CF6FF1A0063612F /* Demo_JSPatchTests.m */; };
-		2DAEAB381CF70BEE0063612F /* JSPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB371CF70BEE0063612F /* JSPatch.framework */; };
 		2DAEAB3A1CF70BFD0063612F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */; };
 		2DAEAB3C1CF70C0F0063612F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAEAB3B1CF70C0F0063612F /* libz.tbd */; };
 		2DAEAB3E1CF70C2E0063612F /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEAB3D1CF70C2E0063612F /* main.js */; };
@@ -51,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D1A16F81CF9E0ED00DA1B37 /* JSPatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatch.framework; sourceTree = "<group>"; };
 		2DAEAB0E1CF6FF1A0063612F /* Demo_JSPatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_JSPatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAEAB121CF6FF1A0063612F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DAEAB141CF6FF1A0063612F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		2DAEAB271CF6FF1A0063612F /* Demo_JSPatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_JSPatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAEAB2B1CF6FF1A0063612F /* Demo_JSPatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo_JSPatchTests.m; sourceTree = "<group>"; };
 		2DAEAB2D1CF6FF1A0063612F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DAEAB371CF70BEE0063612F /* JSPatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSPatch.framework; path = Demo_JSPatch/JSPatch.framework; sourceTree = "<group>"; };
 		2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		2DAEAB3B1CF70C0F0063612F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2DAEAB3D1CF70C2E0063612F /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
@@ -115,9 +115,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1A16F91CF9E0ED00DA1B37 /* JSPatch.framework in Frameworks */,
 				2DAEAB3C1CF70C0F0063612F /* libz.tbd in Frameworks */,
 				2DAEAB3A1CF70BFD0063612F /* JavaScriptCore.framework in Frameworks */,
-				2DAEAB381CF70BEE0063612F /* JSPatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,12 +131,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D9149821CF9DA3400597446 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				2DAEAB551CF7210E0063612F /* EightViewController.h */,
+				2DAEAB561CF7210E0063612F /* EightViewController.m */,
+				2DF21CA51CF8C0A80086B676 /* EighteenViewController.h */,
+				2DF21CA61CF8C0A80086B676 /* EighteenViewController.m */,
+				2DAEAB5E1CF7E7730063612F /* ElevenViewController.h */,
+				2DAEAB5F1CF7E7730063612F /* ElevenViewController.m */,
+				2DF21C9C1CF89F950086B676 /* FifteenViewController.h */,
+				2DF21C9D1CF89F950086B676 /* FifteenViewController.m */,
+				2DAEAB4C1CF712300063612F /* FiveViewController.h */,
+				2DAEAB4D1CF712300063612F /* FiveViewController.m */,
+				2DAEAB491CF712200063612F /* FourViewController.h */,
+				2DAEAB4A1CF712200063612F /* FourViewController.m */,
+				2DAEAB671CF7E7D60063612F /* FourteenViewController.h */,
+				2DAEAB681CF7E7D60063612F /* FourteenViewController.m */,
+				2DAEAB581CF7E1A90063612F /* NightViewController.h */,
+				2DAEAB591CF7E1A90063612F /* NightViewController.m */,
+				2DF21CA81CF95F550086B676 /* NighteenViewController.h */,
+				2DF21CA91CF95F550086B676 /* NighteenViewController.m */,
+				2DAEAB401CF70FFE0063612F /* OneViewController.h */,
+				2DAEAB411CF70FFE0063612F /* OneViewController.m */,
+				2DAEAB521CF71DA10063612F /* SevenViewController.h */,
+				2DAEAB531CF71DA10063612F /* SevenViewController.m */,
+				2DF21CA21CF8BA420086B676 /* SeventeenViewController.h */,
+				2DF21CA31CF8BA420086B676 /* SeventeenViewController.m */,
+				2DAEAB4F1CF712DA0063612F /* SixViewController.h */,
+				2DAEAB501CF712DA0063612F /* SixViewController.m */,
+				2DF21C9F1CF8B85F0086B676 /* SixteenViewController.h */,
+				2DF21CA01CF8B85F0086B676 /* SixteenViewController.m */,
+				2DAEAB5B1CF7E3BD0063612F /* TenViewController.h */,
+				2DAEAB5C1CF7E3BD0063612F /* TenViewController.m */,
+				2DAEAB641CF7E7BE0063612F /* ThirteenViewController.h */,
+				2DAEAB651CF7E7BE0063612F /* ThirteenViewController.m */,
+				2DAEAB461CF712130063612F /* ThreeViewController.h */,
+				2DAEAB471CF712130063612F /* ThreeViewController.m */,
+				2DAEAB611CF7E7930063612F /* TwelveViewController.h */,
+				2DAEAB621CF7E7930063612F /* TwelveViewController.m */,
+				2DAEAB431CF711E20063612F /* TwoViewController.h */,
+				2DAEAB441CF711E20063612F /* TwoViewController.m */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
 		2DAEAB051CF6FF1A0063612F = {
 			isa = PBXGroup;
 			children = (
-				2DAEAB361CF70BE20063612F /* Framework */,
 				2DAEAB101CF6FF1A0063612F /* Demo_JSPatch */,
 				2DAEAB2A1CF6FF1A0063612F /* Demo_JSPatchTests */,
+				2DAEAB361CF70BE20063612F /* Framework */,
 				2DAEAB0F1CF6FF1A0063612F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,11 +198,11 @@
 		2DAEAB101CF6FF1A0063612F /* Demo_JSPatch */ = {
 			isa = PBXGroup;
 			children = (
-				2DAEAB3D1CF70C2E0063612F /* main.js */,
+				2DAEAB3F1CF70C410063612F /* Main */,
+				2DAEAB111CF6FF1A0063612F /* Supporting Files */,
 				2DAEAB141CF6FF1A0063612F /* AppDelegate.h */,
 				2DAEAB151CF6FF1A0063612F /* AppDelegate.m */,
-				2DAEAB3F1CF70C410063612F /* Controllers */,
-				2DAEAB111CF6FF1A0063612F /* Supporting Files */,
+				2DAEAB3D1CF70C2E0063612F /* main.js */,
 			);
 			path = Demo_JSPatch;
 			sourceTree = "<group>";
@@ -165,13 +210,13 @@
 		2DAEAB111CF6FF1A0063612F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2DAEAB1A1CF6FF1A0063612F /* Main.storyboard */,
 				2DAEAB1D1CF6FF1A0063612F /* Assets.xcassets */,
-				2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */,
 				2DAEAB221CF6FF1A0063612F /* Info.plist */,
+				2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */,
+				2DAEAB1A1CF6FF1A0063612F /* Main.storyboard */,
 				2DAEAB121CF6FF1A0063612F /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2DAEAB2A1CF6FF1A0063612F /* Demo_JSPatchTests */ = {
@@ -186,60 +231,23 @@
 		2DAEAB361CF70BE20063612F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				2DAEAB3B1CF70C0F0063612F /* libz.tbd */,
+				2D1A16F81CF9E0ED00DA1B37 /* JSPatch.framework */,
 				2DAEAB391CF70BFD0063612F /* JavaScriptCore.framework */,
-				2DAEAB371CF70BEE0063612F /* JSPatch.framework */,
+				2DAEAB3B1CF70C0F0063612F /* libz.tbd */,
 			);
-			name = Framework;
+			path = Framework;
 			sourceTree = "<group>";
 		};
-		2DAEAB3F1CF70C410063612F /* Controllers */ = {
+		2DAEAB3F1CF70C410063612F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2D9149821CF9DA3400597446 /* Basic */,
 				2DF21C991CF85F7D0086B676 /* JSObject.h */,
 				2DF21C9A1CF85F7D0086B676 /* JSObject.m */,
 				2DAEAB171CF6FF1A0063612F /* ViewController.h */,
 				2DAEAB181CF6FF1A0063612F /* ViewController.m */,
-				2DAEAB401CF70FFE0063612F /* OneViewController.h */,
-				2DAEAB411CF70FFE0063612F /* OneViewController.m */,
-				2DAEAB431CF711E20063612F /* TwoViewController.h */,
-				2DAEAB441CF711E20063612F /* TwoViewController.m */,
-				2DAEAB461CF712130063612F /* ThreeViewController.h */,
-				2DAEAB471CF712130063612F /* ThreeViewController.m */,
-				2DAEAB491CF712200063612F /* FourViewController.h */,
-				2DAEAB4A1CF712200063612F /* FourViewController.m */,
-				2DAEAB4C1CF712300063612F /* FiveViewController.h */,
-				2DAEAB4D1CF712300063612F /* FiveViewController.m */,
-				2DAEAB4F1CF712DA0063612F /* SixViewController.h */,
-				2DAEAB501CF712DA0063612F /* SixViewController.m */,
-				2DAEAB521CF71DA10063612F /* SevenViewController.h */,
-				2DAEAB531CF71DA10063612F /* SevenViewController.m */,
-				2DAEAB551CF7210E0063612F /* EightViewController.h */,
-				2DAEAB561CF7210E0063612F /* EightViewController.m */,
-				2DAEAB581CF7E1A90063612F /* NightViewController.h */,
-				2DAEAB591CF7E1A90063612F /* NightViewController.m */,
-				2DAEAB5B1CF7E3BD0063612F /* TenViewController.h */,
-				2DAEAB5C1CF7E3BD0063612F /* TenViewController.m */,
-				2DAEAB5E1CF7E7730063612F /* ElevenViewController.h */,
-				2DAEAB5F1CF7E7730063612F /* ElevenViewController.m */,
-				2DAEAB611CF7E7930063612F /* TwelveViewController.h */,
-				2DAEAB621CF7E7930063612F /* TwelveViewController.m */,
-				2DAEAB641CF7E7BE0063612F /* ThirteenViewController.h */,
-				2DAEAB651CF7E7BE0063612F /* ThirteenViewController.m */,
-				2DAEAB671CF7E7D60063612F /* FourteenViewController.h */,
-				2DAEAB681CF7E7D60063612F /* FourteenViewController.m */,
-				2DF21C9C1CF89F950086B676 /* FifteenViewController.h */,
-				2DF21C9D1CF89F950086B676 /* FifteenViewController.m */,
-				2DF21C9F1CF8B85F0086B676 /* SixteenViewController.h */,
-				2DF21CA01CF8B85F0086B676 /* SixteenViewController.m */,
-				2DF21CA21CF8BA420086B676 /* SeventeenViewController.h */,
-				2DF21CA31CF8BA420086B676 /* SeventeenViewController.m */,
-				2DF21CA51CF8C0A80086B676 /* EighteenViewController.h */,
-				2DF21CA61CF8C0A80086B676 /* EighteenViewController.m */,
-				2DF21CA81CF95F550086B676 /* NighteenViewController.h */,
-				2DF21CA91CF95F550086B676 /* NighteenViewController.m */,
 			);
-			name = Controllers;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +402,7 @@
 				2DAEAB1B1CF6FF1A0063612F /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		2DAEAB1F1CF6FF1A0063612F /* LaunchScreen.storyboard */ = {
@@ -402,6 +411,7 @@
 				2DAEAB201CF6FF1A0063612F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -494,8 +504,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Demo_JSPatch",
+					"$(PROJECT_DIR)/Framework",
 				);
-				INFOPLIST_FILE = Demo_JSPatch/Info.plist;
+				INFOPLIST_FILE = "Demo_JSPatch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WanJianTechnology.Demo-JSPatch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,8 +520,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Demo_JSPatch",
+					"$(PROJECT_DIR)/Framework",
 				);
-				INFOPLIST_FILE = Demo_JSPatch/Info.plist;
+				INFOPLIST_FILE = "Demo_JSPatch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WanJianTechnology.Demo-JSPatch";
 				PRODUCT_NAME = "$(TARGET_NAME)";

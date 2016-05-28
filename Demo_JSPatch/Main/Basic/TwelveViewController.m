@@ -20,12 +20,12 @@
     label.text = @"OC_Label";
     CGFloat x = label.frame.origin.x;
     [self.view addSubview:label];
-    NSLog(@"positionX:%f",x);
+//    NSLog(@"positionX:%f",x);
     
     NSRange range = NSMakeRange(0, 1);
     NSString *str = @"dljfaj";
     NSString *subStr = [str substringWithRange:range];
-    NSLog(@"subStr:%@",subStr);
+//    NSLog(@"subStr:%@",subStr);
     
     [self performSelector:@selector(ocSelector:) withObject:@"ocSelector"];
     
