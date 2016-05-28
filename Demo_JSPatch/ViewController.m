@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.title = @"JSPatchSyntaxDemo";
     [self.view addSubview:self.tableView];
 }
 
@@ -82,18 +83,19 @@
                        @"11.让一个类实现某些 Protocol 接口",
                        @"12.特殊类型",
                        @"13.NSArray / NSString / NSDictionary",
-                       @"",
-                       @"",
-                       @"",
-                       @"",
-                       @""];
+                       @"14.Block",
+                       @"15.GCD",
+                       @"16.传递 id* 参数",
+                       @"17.常量、枚举、宏、全局变量",
+                       @"18.宏",
+                       @"19.全局变量"];
     }
     return _dataArray;
 }
 
 - (NSArray *)vcArray {
     if (!_vcArray) {
-        _vcArray = @[@"OneViewController",@"TwoViewController",@"ThreeViewController",@"FourViewController",@"FiveViewController",@"SixViewController",@"SevenViewController",@"EightViewController",@"NightViewController",@"TenViewController",@"ElevenViewController",@"TwelveViewController",@"ThirteenViewController",@"FourteenViewController"];
+        _vcArray = @[@"OneViewController",@"TwoViewController",@"ThreeViewController",@"FourViewController",@"FiveViewController",@"SixViewController",@"SevenViewController",@"EightViewController",@"NightViewController",@"TenViewController",@"ElevenViewController",@"TwelveViewController",@"ThirteenViewController",@"FourteenViewController",@"FifteenViewController",@"SixteenViewController",@"SeventeenViewController",@"EighteenViewController",@"NighteenViewController"];
     }
     return _vcArray;
 }

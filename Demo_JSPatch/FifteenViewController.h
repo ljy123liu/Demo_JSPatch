@@ -1,13 +1,13 @@
 //
-//  JSObject.h
+//  FifteenViewController.h
 //  Demo_JSPatch
 //
 //  Created by LIUYONG on 16/5/27.
 //  Copyright © 2016年 WanJianTechnology. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface JSObject : NSObject
+@interface FifteenViewController : UIViewController
 
 @end

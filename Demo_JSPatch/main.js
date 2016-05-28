@@ -1,4 +1,4 @@
-require('UIView, UIColor, UILabel, UIImageView','NSObject')
+require('UIView, UIColor, UILabel, UIImageView,NSObject,UIButton')
 
 //1.多方法调用，用” , ”隔开(覆盖分类的方法和普通方法一样)
 defineClass('OneViewController', {
@@ -214,12 +214,135 @@ defineClass('ThirteenViewController', {
     }
 });
 
+//14.Block
+require('JSObject')
+defineClass('FourteenViewController', {
+    viewDidLoad: function() {
+        self.super().viewDidLoad;
+        self.view().setBackgroundColor(UIColor.redColor());
+            
+        //(1)当要把 JS 函数作为 block 参数给 OC时，需要先使用 block(paramTypes, function) 接口包装:
+        JSObject.request(block("NSString *, BOOL", function(ctn, succ) {
+            if (succ) console.log(ctn)  //output: I'm content
+        }))
+        
+        //(2)从 OC 返回给 JS 的 block 会自动转为 JS function，直接调用即可:
+        var blk = JSObject.genBlock();
+        blk({v: "0.0.1"});  //output: I'm JSPatch, version: 0.0.1
+            
+        //(3)若要把这个从 OC 传过来的 block 再传回给 OC，同样需要再用 block() 包装，因为这里 blk 已经是一个普通的 JS function，跟我们上面定义的 JS function 没有区别：
+        var blk1 = require('JSObject').genBlock();
+        blk1({v: "0.0.2"});  //output: I'm JSPatch, version: 0.0.1
+        require('JSObject').execBlock(block("id", blk1));
+        
+        //(4)block 里使用 self 变量
+        //在 block 里无法使用 self 变量，需要在进入 block 之前使用临时变量保存它:
+        var JSSelf = self;
+        require("JSTestObject").callBlock(block(function(){
+            //`self` is not available here, use `slf` instead.
+            JSSelf.doSomething();
+        }));
+                            
+        //(5)从 JS 传 block 到 OC，有两个限制：
+//          A. block 参数个数最多支持6个。（若需要支持更多，可以修改源码）
+//          B. block 参数类型不能是 double。
+//          另外不支持 JS 封装的 block 传到 OC 再传回 JS 去调用
+        
+        //(6)__weak / __strong
+        var weakSelf = __weak(self);
+        self.setCompelectBlock(block(function(){
+//            weakSelf.blabla...
+             var strongSelf = __strong(weakSelf);
+//            strongSelf.balala....
+        }))
+    }
+});
+
+//15.GCD
+defineClass('FifteenViewController', {
+    viewDidLoad: function() {
+        self.super().viewDidLoad;
+        self.view().setBackgroundColor(UIColor.blueColor());
+        //JS
+        dispatch_after(1.0, function(){
+             console.log('after 1.0')
+        }),
+    
+        dispatch_async_main(function(){
+             console.log('async_main')
+        }),
+    
+        dispatch_sync_main(function() {
+             console.log('sync_main')
+        }),
+        
+        dispatch_async_global_queue(function() {
+             console.log('async_global_queue')
+        })
+    }
+})
+
+//16.传递 id* 参数(???)
+require('JPEngine').addExtensions(['JPMemory'])
+defineClass('SixteenViewController', {
+    testPointer: function(error) {
+    var  tmp = require('NSError').errorWithDomain_code_userInfo("test", 1, null);
+    var newErrorPointer = getPointer(tmp);
+    console.log('2');
+    console.log(tmp);
+    memcpy(error, newErrorPointer, sizeof('id'));
+    }
+})
 
 
+//17.常量、枚举、宏、全局变量
+require('NSAttributedString')
+defineClass('SeventeenViewController', {
+            //(1)Objective-C 里的常量/枚举不能直接在 JS 上使用，可以直接在 JS 上用具体值代替
+            JSButton: function() {
+                var button = UIButton.alloc().initWithFrame({x: 250, y: 100, width: 100, height: 100});
+                button.setBackgroundColor(UIColor.greenColor());
+                var UIControlEventTouchUpInside  = 1 << 6;
+                button.addTarget_action_forControlEvents(self, 'JSClick', UIControlEventTouchUpInside);
+                self.view().addSubview(button);
+            },
+            
+            testJSConstStr: function() {
+                //(2)有些常量字符串，需要在 OC 用 NSLog 打出看看它的值是什么
+                var JSConstStr = NSAttributedString.alloc().initWithString_attributes("无效啊", {'NSColor': UIColor.redColor()});
+                console.log('123');
+                console.log(JSConstStr);
+            }
+})
 
+//18.宏
+require('UIScreen')
+//require('JPEngine').addExtensions(['EighteenViewController'])
+defineClass('EighteenViewController', {
+            viewDidLoad: function() {
+                self.super().viewDidLoad();
+                //(1)//Objective-C 里的宏同样不能直接在 JS 上使用。若定义的宏是一个值，可以在 JS 定义同样的全局变量代替，若定义的宏是程序，可以在JS展开宏：
+                var screenWidth = UIScreen.mainScreen().bounds().width;
+                console.log(screenWidth);
+            
+                //(2)若宏的值是某些在底层才能获取到的值，例如 CGFLOAT_MIN，可以通过在某个类或实例方法里将它返回，或者用添加扩展的方式提供支持：
+                //OC函数返回
+            
+                //添加扩展提供支持
+                var floatMin = CGFLOAT_MIN();
+            }
+})
 
-
-
+//19.全局变量
+//在类里定义的 static 全局变量无法在 JS 上获取到，若要在 JS 拿到这个变量，需要在 OC 有类方法或实例方法把它返回
+defineClass('NighteenViewController', {
+            viewDidLoad: function() {
+                self.super().viewDidLoad();
+                self.view().setBackgroundColor(UIColor.redColor());
+                var name = NighteenViewController.name();
+                console.log(name);
+            }
+})
 
 
 
