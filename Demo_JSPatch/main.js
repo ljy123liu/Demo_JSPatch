@@ -73,13 +73,21 @@ defineClass('SixViewController',{
     }
 })
 
-//7.用调用 getter / setter 的方式获取/修改已在 OC 定义的 Property:
+//7.用调用 getter / setter 的方式获取/修改已在 OC 定义的 Property:(???)
 defineClass('SevenViewController',{
-    viewDidLoad: function() {
-        var data = self.data();     //get property value
-        self.setData(data.toJS().push("JSPatch"));     //set property value
-        console.log(self.data());
-    },
+//    viewDidLoad: function() {
+//            self.super().viewDidLoad();
+//            self.view().setBackgroundColor(UIColor.redColor());
+//        var data = self.data();     //get property value
+//        self.setData(data.toJS().push("JSPatch"));     //set property value
+//        console.log(self.data());
+//    },
+    viewWillAppear: function(animated) {
+            self.super().viewWillAppear(animated);
+            var data = self.data();     //get property value
+            self.setData(data.toJS().push("JSPatch"));     //set property value
+            console.log(self.data());
+    }
 })
 
 //8.动态新增 Property
@@ -87,7 +95,7 @@ defineClass('EightViewController', ['data', 'totalCount'], {
     init: function() {
         self = self.super().init()
         self.setData(["a", "b"])     //添加新的 Property (id data)
-        self.setTotalCount(2)
+        self.setTotalCount("ljy")
         return self
     },
             
@@ -100,6 +108,7 @@ defineClass('EightViewController', ['data', 'totalCount'], {
 })
 
 //9.私有成员变量
+//使用 valueForKey() 和 setValue_forKey() 获取/修改私有成员变量:
 defineClass('NightViewController' , {
     viewDidLoad: function() {
         var data = self.valueForKey("_data")     //get member variables
