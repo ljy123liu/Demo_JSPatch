@@ -12,6 +12,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"JSPatch" message:@"Test" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"other", nil];
+//    [alertView show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

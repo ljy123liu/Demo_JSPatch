@@ -62,6 +62,7 @@ defineClass('FiveViewController',{
 
 //6.覆盖类方法,实例方法在第二个参数，类方法放在第三个参数
 defineClass('SixViewController',{
+            
     methodA: function(){
     //实例方法
         console.log('调用实例方法')
@@ -75,13 +76,7 @@ defineClass('SixViewController',{
 
 //7.用调用 getter / setter 的方式获取/修改已在 OC 定义的 Property:(???)
 defineClass('SevenViewController',{
-//    viewDidLoad: function() {
-//            self.super().viewDidLoad();
-//            self.view().setBackgroundColor(UIColor.redColor());
-//        var data = self.data();     //get property value
-//        self.setData(data.toJS().push("JSPatch"));     //set property value
-//        console.log(self.data());
-//    },
+
     viewWillAppear: function(animated) {
             self.super().viewWillAppear(animated);
             var data = self.data();     //get property value
@@ -92,6 +87,7 @@ defineClass('SevenViewController',{
 
 //8.动态新增 Property
 defineClass('EightViewController', ['data', 'totalCount'], {
+            
     init: function() {
         self = self.super().init()
         self.setData(["a", "b"])     //添加新的 Property (id data)
@@ -110,6 +106,7 @@ defineClass('EightViewController', ['data', 'totalCount'], {
 //9.私有成员变量
 //使用 valueForKey() 和 setValue_forKey() 获取/修改私有成员变量:
 defineClass('NightViewController' , {
+            
     viewDidLoad: function() {
         var data = self.valueForKey("_data")     //get member variables
         self.setValue_forKey(["JSPatch"], "_data")     //set member variables
@@ -119,6 +116,7 @@ defineClass('NightViewController' , {
 //10.可以给一个类随意添加 OC 未定义的方法，但所有的参数类型都是 id:
 var data = ["JS", "Patch"]
 defineClass('TenViewController', {
+            
     dataAtIndex: function(idx) {
     return idx < data.length ? data[idx]: ""
     }
@@ -127,15 +125,11 @@ defineClass('TenViewController', {
 //11.让一个类实现某些 Protocol 接口
 defineClass("ElevenViewController: UIViewController <UIAlertViewDelegate>", {
     viewDidAppear: function(animated) {
-        var alertView = require('UIAlertView')
-          .alloc()
-          .initWithTitle_message_delegate_cancelButtonTitle_otherButtonTitles(
-            "Alert",
-            self.dataSource().objectAtIndex(indexPath.row()),
-            self,
-            "OK",
-            null
-        )
+        self.super().viewDidAppear(animated)
+            console.log('11')
+        var alertView = require('UIAlertView').alloc().initWithTitle_message_delegate_cancelButtonTitle_otherButtonTitles(
+            "Alert","Test",self,"OK",null)
+            console.log('22')
         alertView.show()
     },
             
@@ -178,6 +172,7 @@ defineClass('TwelveViewController', {
 
 //nil(待处理)
 defineClass('TwelveViewController', {
+            
     testMethod: function() {
         console.log('test');
     },
@@ -199,6 +194,7 @@ defineClass('TwelveViewController', {
 //13.NSArray / NSString / NSDictionary 不会自动转成对应的JS类型，像普通 NSObject 一样使用它们:
 require('JSObject')
 defineClass('ThirteenViewController', {
+            
     viewDidLoad: function() {
         self.super().viewDidLoad;
         self.view().setBackgroundColor(UIColor.greenColor());
@@ -226,6 +222,7 @@ defineClass('ThirteenViewController', {
 //14.Block
 require('JSObject')
 defineClass('FourteenViewController', {
+            
     viewDidLoad: function() {
         self.super().viewDidLoad;
         self.view().setBackgroundColor(UIColor.redColor());
@@ -269,6 +266,7 @@ defineClass('FourteenViewController', {
 
 //15.GCD
 defineClass('FifteenViewController', {
+            
     viewDidLoad: function() {
         self.super().viewDidLoad;
         self.view().setBackgroundColor(UIColor.blueColor());
@@ -294,6 +292,7 @@ defineClass('FifteenViewController', {
 //16.传递 id* 参数(???)
 require('JPEngine').addExtensions(['JPMemory'])
 defineClass('SixteenViewController', {
+            
     testPointer: function(error) {
     var  tmp = require('NSError').errorWithDomain_code_userInfo("test", 1, null);
     var newErrorPointer = getPointer(tmp);
@@ -307,50 +306,53 @@ defineClass('SixteenViewController', {
 //17.常量、枚举、宏、全局变量
 require('NSAttributedString')
 defineClass('SeventeenViewController', {
-            //(1)Objective-C 里的常量/枚举不能直接在 JS 上使用，可以直接在 JS 上用具体值代替
-            JSButton: function() {
-                var button = UIButton.alloc().initWithFrame({x: 250, y: 100, width: 100, height: 100});
-                button.setBackgroundColor(UIColor.greenColor());
-                var UIControlEventTouchUpInside  = 1 << 6;
-                button.addTarget_action_forControlEvents(self, 'JSClick', UIControlEventTouchUpInside);
-                self.view().addSubview(button);
-            },
             
-            testJSConstStr: function() {
-                //(2)有些常量字符串，需要在 OC 用 NSLog 打出看看它的值是什么
-                var JSConstStr = NSAttributedString.alloc().initWithString_attributes("无效啊", {'NSColor': UIColor.redColor()});
-                console.log('123');
-                console.log(JSConstStr);
-            }
+    //(1)Objective-C 里的常量/枚举不能直接在 JS 上使用，可以直接在 JS 上用具体值代替
+    JSButton: function() {
+        var button = UIButton.alloc().initWithFrame({x: 250, y: 100, width: 100, height: 100});
+        button.setBackgroundColor(UIColor.greenColor());
+        var UIControlEventTouchUpInside  = 1 << 6;
+        button.addTarget_action_forControlEvents(self, 'JSClick', UIControlEventTouchUpInside);
+        self.view().addSubview(button);
+    },
+    
+    testJSConstStr: function() {
+        //(2)有些常量字符串，需要在 OC 用 NSLog 打出看看它的值是什么
+        var JSConstStr = NSAttributedString.alloc().initWithString_attributes("无效啊", {'NSColor': UIColor.redColor()});
+        console.log('123');
+        console.log(JSConstStr);
+    }
 })
 
 //18.宏
 require('UIScreen')
 //require('JPEngine').addExtensions(['EighteenViewController'])
 defineClass('EighteenViewController', {
-            viewDidLoad: function() {
-                self.super().viewDidLoad();
-                //(1)//Objective-C 里的宏同样不能直接在 JS 上使用。若定义的宏是一个值，可以在 JS 定义同样的全局变量代替，若定义的宏是程序，可以在JS展开宏：
-                var screenWidth = UIScreen.mainScreen().bounds().width;
-                console.log(screenWidth);
             
-                //(2)若宏的值是某些在底层才能获取到的值，例如 CGFLOAT_MIN，可以通过在某个类或实例方法里将它返回，或者用添加扩展的方式提供支持：
-                //OC函数返回
-            
-                //添加扩展提供支持
-                var floatMin = CGFLOAT_MIN();
-            }
+    viewDidLoad: function() {
+        self.super().viewDidLoad();
+        //(1)//Objective-C 里的宏同样不能直接在 JS 上使用。若定义的宏是一个值，可以在 JS 定义同样的全局变量代替，若定义的宏是程序，可以在JS展开宏：
+        var screenWidth = UIScreen.mainScreen().bounds().width;
+        console.log(screenWidth);
+    
+        //(2)若宏的值是某些在底层才能获取到的值，例如 CGFLOAT_MIN，可以通过在某个类或实例方法里将它返回，或者用添加扩展的方式提供支持：
+        //OC函数返回
+    
+        //添加扩展提供支持
+        var floatMin = CGFLOAT_MIN();
+    }
 })
 
 //19.全局变量
 //在类里定义的 static 全局变量无法在 JS 上获取到，若要在 JS 拿到这个变量，需要在 OC 有类方法或实例方法把它返回
 defineClass('NighteenViewController', {
-            viewDidLoad: function() {
-                self.super().viewDidLoad();
-                self.view().setBackgroundColor(UIColor.redColor());
-                var name = NighteenViewController.name();
-                console.log(name);
-            }
+            
+    viewDidLoad: function() {
+        self.super().viewDidLoad();
+        self.view().setBackgroundColor(UIColor.redColor());
+        var name = NighteenViewController.name();
+        console.log(name);
+    }
 })
 
 
